@@ -1,5 +1,22 @@
 #EO
 #---------------Funciones----------------------------
+def consulta_pokemon(respuesta_usuario):
+    while respuesta_usuario != poke1 and respuesta_usuario != poke2 and respuesta_usuario != poke3:
+
+        print("No se encontró el Pokémon que buscas, vuelve a intentarlo")
+        respuesta_usuario=str(input())
+
+    else:
+
+        if respuesta_usuario == poke1:
+            print(caracteristicas_pokemon(statspoke1,movpoke1,evolpoke1))
+                
+        elif respuesta_usuario == poke2:
+            print(caracteristicas_pokemon(statspoke2,movpoke2,evolpoke2))
+                
+        elif respuesta_usuario == poke3:
+            print(caracteristicas_pokemon(statspoke3,movpoke3,evolpoke3))
+
 def caracteristicas_pokemon(statspoke,movpoke,evolpoke):
     return statspoke + "\n" + movpoke + "\n" + evolpoke
 
@@ -20,7 +37,6 @@ def puntos_def_esp(def_esp1, def_esp2, def_esp3):
 
 def puntos_velocidad(velocidad1, velocidad2, velocidad3):
     return max(velocidad1, velocidad2, velocidad3)
-
 #-------------Variables------------------
 poke1="Rillaboom"
 poke2="Cinderace"
@@ -39,18 +55,7 @@ print("Estos son los Pokémon iniciales consultables de la región de Galar:", p
 print("Teclea correctamente el nombre del Pokémon que deseas consultar:")
 
 respuesta_usuario=str(input())
-#--------------Condicionales------------------------
-if respuesta_usuario == poke1:
-    print(caracteristicas_pokemon(statspoke1,movpoke1,evolpoke1))
-    
-elif respuesta_usuario == poke2:
-    print(caracteristicas_pokemon(statspoke2,movpoke2,evolpoke2))
-    
-elif respuesta_usuario == poke3:
-    print(caracteristicas_pokemon(statspoke3,movpoke3,evolpoke3))
-
-else:
-    print("No se encontró el Pokémon que buscas")
+consulta_pokemon(respuesta_usuario)
 #--------------------------------------------------------------
 print("-Comparando puntos de vida, los más altos son: ", puntos_vida(100,80,70), "correspondientes a :", poke1)
 
@@ -66,6 +71,7 @@ print("-Comparando puntos de velocidad, los más altos son: ", puntos_velocidad(
 
 #EF
 print("¡Gracias por consultar en la micro pokédex!")
+
 
 
     
